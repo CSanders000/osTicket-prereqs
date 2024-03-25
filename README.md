@@ -75,7 +75,7 @@ When configurating, we want to make sure we choose Standard Configuration. It wi
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/e763b42f-8ba9-4b6f-a0e5-10cf49a2eb5c"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Next, we will open up the Internet Information Services (IIS) Manager, click on our server name, click PHP, and then register new PHP version. It will ask us to provide a path and we will select C:\PHP\php-cgi.exe. Then hit ok and reload the server. 
 </p>
 <br />
 
@@ -83,7 +83,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/9dc7aede-6acc-4178-8cde-924554b194d3"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+When we finish the last step we can install osTicket-v1.15.8.zip from our installation files. One we download we will open the osTicket folder in our downloads, then copy the file to Windows(C:)\inetpub\wwwroot. Once it is copied we will rename it "osTicket". Then we will reload IIS. 
 </p>
 <br />
 
@@ -91,7 +91,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/09dc446f-65d7-4955-bd9c-17e46a577a17"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+From the IIS, we will click osTicket, click the drop down arrow on sites, click the drop down arrow won Default Web Site, and then click on the osTicket folder. From here we will click the "Browse *.80 (http)" button on the right side. If everything was done right then osTicket will open in our default browser.
 </p>
 <br />
 
@@ -99,7 +99,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/0f03ee08-dcba-4508-b954-917249c08c33"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+When we open osTicket in our browser we'll notice there are some features that aren't enabled. We will need to enable some features in order to set up osTicket correctly. So we will go back to the previously open osTicket folder in our IIS and open the PHP Manager. We will scroll down the the bottom and click "Enable or disable an extension". Then we will enable "php_imap.dll", "php_intl.dll", and "php_opcache.dll". Once finished we can refresh the site to see that the features have now been enabled and we can press continue.
 </p>
 <br />
 
@@ -107,7 +107,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/877587d7-1e52-4966-b260-537ae632b5bb"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Our next step is to rename ost-sampleconfig. So we will go to C:\inetpub\wwwroot\osTicket\include and scroll down until we find "ost-sampleconfig.php". We will simply rename it to "ost-config.php"
 </p>
 <br />
 
@@ -115,7 +115,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/c2a8bc52-815a-450a-a4b0-3c4ebe5b5d70"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Now we will right click ost-config.php and open the properties window. We will then go to advanced security and firstly disable all inheritance. Then we will click "Add", type "Everyone", and then give them full control. Then we will press apply and close out of the window. 
 </p>
 <br />
 
@@ -123,7 +123,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/d19f9d3f-05f5-40c6-baf2-21d6b596535e"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+We will need to create a database for osTicket to use before we can install osTicket onto the server. So we will download and install HeidiSQL. We will create a new session with the "New" button on the bottom right. We will then see on the right side of the window our username "root" from our MySQL setup, and we will enter our password we chose and press open. We will then right click "Unnamed" and then click "Create New", then "Database". Then we will name it "osTicket". 
 </p>
 <br />
 
@@ -131,7 +131,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/2e04bd6f-2727-47c2-904a-4e92d8b0cb4b"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Now we can go back to our browser and fill out the information needed to install osTicket to the server. So we can name our Help Desk, give it a default email, create the admin user, and then enter the information for our database. The MySQL database name will be "osTicket", the username "root", and the password is whatever we chose. If everything went properly then it will have successfully been installed. 
 </p>
 <br />
 
@@ -139,7 +139,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src=https://github.com/CSanders000/osTicket-prereqs/assets/161166823/0749420a-ebd5-42b3-ad31-163e0fd2a6aa"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Lastly there is a bit of cleanup we have to do osTicket to run properly. First, we must go to C:\inetpub\wwwroot\osTicket and then delete the setup folder. The final step is to go back to C:\inetpub\wwwroot\osTicket\include\ost-config.php, open properties and advanced security settings, and change permissions to be read and execute only.  
 </p>
 <br />
 
